@@ -44,6 +44,8 @@ public class Create implements URL
 	driver.findElement(By.className("zgh-login")).click();
 	String Title1= driver.getTitle();
 	System.out.println(Title1);
+	Thread.sleep(2000);
+	
 	Assert.assertEquals(Title1, "Zoho Accounts");
 	
 	driver.findElement(By.id("login_id")).sendKeys(UN);
@@ -70,7 +72,8 @@ public class Create implements URL
 	   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	   
 	   //Data Driven Testing
-	   try {
+	   try
+	   {
 	   FileInputStream fis = new FileInputStream("C:\\Users\\gopi\\Desktop\\TestData3.csv");
 	  Workbook wb = WorkbookFactory.create(fis);
 	 Cell value = wb.getSheet("sheet1").getRow(r).getCell(c);
